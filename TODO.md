@@ -8,10 +8,10 @@
 - [x] 環境変数読み込み（config.py）の実装
 
 ## Phase 2: 論文収集機能
-- [ ] arXiv collector実装（arxiv_collector.py）
-  - [ ] arXiv APIとの連携
-  - [ ] 検索クエリのパース
-  - [ ] 論文データの取得・パース
+- [x] arXiv collector実装（arxiv_collector.py）
+  - [x] arXiv APIとの連携
+  - [x] 検索クエリのパース
+  - [x] 論文データの取得・パース
 - [ ] Scholar collector実装（scholar_collector.py）
   - [ ] Semantic Scholar APIとの連携
   - [ ] 論文データの取得・パース
@@ -45,9 +45,10 @@
   - [ ] Secrets設定の確認
 
 ## Phase 7: テストとドキュメント
-- [ ] ユニットテストの作成
+- [x] ユニットテストの作成（arXiv collector）
+- [x] 手動テストスクリプトの作成
+- [x] README.mdの更新（テスト実行手順追加）
 - [ ] 統合テストの実行
-- [ ] README.mdの作成
 - [ ] 使用方法のドキュメント整備
 
 ## Phase 8: 最終調整とデプロイ
@@ -60,5 +61,7 @@
 
 ## 進捗メモ
 - 作成日: 2025-11-01
-- 最終更新: 2025-11-01
+- 最終更新: 2025-11-01 08:53
 - Phase 1完了: プロジェクト基盤構築完了（ディレクトリ構造、設定ファイル、依存関係管理）
+- Phase 2部分完了: arXiv collector実装完了（APIとの連携、検索、データパース、エラーハンドリング）
+- Phase 7部分完了: arXiv collectorのユニットテスト・手動テスト作成、README更新

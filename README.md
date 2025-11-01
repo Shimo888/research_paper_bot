@@ -31,6 +31,22 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+### 3. テストの実行
+
+```bash
+# 仮想環境をアクティベート
+source venv/bin/activate
+
+# すべてのテストを実行
+python -m pytest tests/ -v
+
+# 特定のテストファイルを実行
+python -m pytest tests/test_arxiv_collector.py -v
+
+# カバレッジ付きでテスト実行
+python -m pytest tests/ --cov=src --cov-report=html
+```
+
 ## ディレクトリ構成
 
 ```
