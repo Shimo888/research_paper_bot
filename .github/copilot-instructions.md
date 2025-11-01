@@ -1,6 +1,8 @@
 # 概要
 最新の技術論文を自動収集し、AIが要約して、Discordに定期通知するBot
 
+詳細なセットアップ手順は [README.md](../README.md) を参照してください。
+
 ## プロジェクトの目的
 - arXiv、Google Scholar等から最新の技術論文を自動収集
 - OpenAI GPT APIを使用して論文を要約
