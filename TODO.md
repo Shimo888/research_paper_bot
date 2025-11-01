@@ -1,11 +1,11 @@
 # Research Paper Bot - 実装TODO
 
 ## Phase 1: プロジェクト基盤構築
-- [ ] プロジェクト構造の作成（ディレクトリ、__init__.py）
-- [ ] requirements.txtの作成
-- [ ] .env.exampleの作成
-- [ ] .gitignoreの作成
-- [ ] 環境変数読み込み（config.py）の実装
+- [x] プロジェクト構造の作成（ディレクトリ、__init__.py）
+- [x] requirements.txtの作成
+- [x] .env.exampleの作成
+- [x] .gitignoreの作成
+- [x] 環境変数読み込み（config.py）の実装
 
 ## Phase 2: 論文収集機能
 - [ ] arXiv collector実装（arxiv_collector.py）
@@ -61,3 +61,4 @@
 ## 進捗メモ
 - 作成日: 2025-11-01
 - 最終更新: 2025-11-01
+- Phase 1完了: プロジェクト基盤構築完了（ディレクトリ構造、設定ファイル、依存関係管理）
