@@ -44,6 +44,7 @@ research_paper_bot/
 ├── requirements.txt                  # Python依存パッケージ
 ├── .env.example                      # 環境変数のサンプル
 ├── .gitignore
+├── TODO.md                           # 実装TODOリスト
 └── README.md
 ```
 
@@ -68,3 +69,8 @@ MAX_PAPERS_PER_DAY=5
 - エラーハンドリングを適切に実装
 - ログを標準出力に記録（GitHub Actions対応）
 - 機密情報はGitHub Secretsで管理
+
+## プロジェクト管理
+- **TODO管理**: プロジェクトルートの`TODO.md`でStep by stepの実装タスクを管理
+- Markdown形式のチェックリスト（`- [ ]`, `- [x]`）を使用
+- フェーズごとにタスクを整理し、進捗を記録
