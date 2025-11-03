@@ -9,9 +9,10 @@ arXivやGoogle Scholar等から最新の技術論文を自動収集し、OpenAI 
 ## 技術スタック
 
 - 言語: Python 3.11+
-- 論文収集: arXiv API, Semantic Scholar API
+- 論文収集: arXiv API, Semantic Scholar API(未実装)
 - AI要約: OpenAI GPT-4 API
 - 通知: Discord Webhook
+- 定期実行: Github Actions
 - 依存管理: pip (requirements.txt)
 
 ## ローカル環境でのセットアップ
