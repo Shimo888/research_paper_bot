@@ -48,7 +48,7 @@ class DiscordNotifier:
             bool: 送信成功の場合True
         """
         try:
-            webhook = DiscordWebhook(url=self.webhook_url)
+            webhook = DiscordWebhook(url=self.webhook_url, timeout = 10)
             
             if title:
                 # 埋め込み形式で送信
@@ -104,11 +104,11 @@ class DiscordNotifier:
             bool: 送信成功の場合True
         """
         try:
-            webhook = DiscordWebhook(url=self.webhook_url)
+            webhook = DiscordWebhook(url=self.webhook_url, timeout = 10)
             
             embed = DiscordEmbed(
                 title=self._truncate(title, 256),
-                description=self._truncate(description, 4096),
+                description=self._truncate(description, 2000),
                 color=color
             )
             
@@ -165,7 +165,7 @@ class DiscordNotifier:
             bool: 接続成功の場合True
         """
         try:
-            webhook = DiscordWebhook(url=self.webhook_url)
+            webhook = DiscordWebhook(url=self.webhook_url, timeout = 10)
             
             embed = DiscordEmbed(
                 title="🔧 接続テスト",
