@@ -2,8 +2,10 @@
 
 import logging
 from datetime import datetime, timedelta
-from typing import List, Dict, Optional
+from typing import List
 import arxiv
+
+from src.models import PaperResult
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +23,7 @@ class ArxivCollector:
         self.max_results = max_results
         logger.info(f"ArxivCollector initialized with query: {search_query}")
     
-    def collect_recent_papers(self, days: int = 1) -> List[Dict[str, str]]:
+    def collect_recent_papers(self, days: int = 1) -> List[PaperResult]:
         """
         指定日数以内に公開された論文を収集
         
@@ -53,16 +55,16 @@ class ArxivCollector:
                     logger.debug(f"Paper {result.entry_id} is too old, skipping")
                     continue
                 
-                paper_info = {
-                    "id": result.entry_id,
-                    "title": result.title,
-                    "authors": ", ".join([author.name for author in result.authors]),
-                    "abstract": result.summary,
-                    "url": result.entry_id,
-                    "published": published.isoformat(),
-                    "categories": ", ".join(result.categories),
-                    "source": "arXiv"
-                }
+                paper_info = PaperResult(
+                    id=result.entry_id,
+                    title=result.title,
+                    authors=", ".join([author.name for author in result.authors]),
+                    abstract=result.summary,
+                    url=result.entry_id,
+                    published=published.isoformat(),
+                    categories=", ".join(result.categories),
+                    source="arXiv"
+                )
                 papers.append(paper_info)
                 logger.info(f"Collected paper: {result.title}")
             
@@ -73,7 +75,7 @@ class ArxivCollector:
             logger.error(f"Error collecting papers from arXiv: {e}")
             raise
     
-    def collect_papers(self) -> List[Dict[str, str]]:
+    def collect_papers(self) -> List[PaperResult]:
         """
         最新論文を収集（デフォルト: 過去1日）
         

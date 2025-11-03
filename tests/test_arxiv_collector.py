@@ -3,6 +3,7 @@
 import pytest
 from datetime import datetime
 from src.collectors.arxiv_collector import ArxivCollector
+from src.models import PaperResult
 
 
 def test_arxiv_collector_initialization():
@@ -20,20 +21,21 @@ def test_collect_papers():
     # 論文が取得できること
     assert isinstance(papers, list)
     
-    # 各論文が必要なフィールドを持つこと
+    # 各論文がPaperResultインスタンスであること
     if papers:
         paper = papers[0]
-        assert "id" in paper
-        assert "title" in paper
-        assert "authors" in paper
-        assert "abstract" in paper
-        assert "url" in paper
-        assert "published" in paper
-        assert "categories" in paper
-        assert paper["source"] == "arXiv"
+        assert isinstance(paper, PaperResult)
+        assert paper.id
+        assert paper.title
+        assert paper.authors
+        assert paper.abstract
+        assert paper.url
+        assert paper.published
+        assert paper.categories
+        assert paper.source == "arXiv"
         
         # URLが正しい形式であること
-        assert "arxiv.org" in paper["url"]
+        assert "arxiv.org" in paper.url
 
 
 def test_collect_recent_papers_with_days():
@@ -53,7 +55,7 @@ if __name__ == "__main__":
     
     print(f"\nCollected {len(papers)} papers:")
     for i, paper in enumerate(papers, 1):
-        print(f"\n{i}. {paper['title']}")
-        print(f"   Authors: {paper['authors'][:100]}...")
-        print(f"   URL: {paper['url']}")
-        print(f"   Published: {paper['published']}")
+        print(f"\n{i}. {paper.title}")
+        print(f"   Authors: {paper.authors[:100]}...")
+        print(f"   URL: {paper.url}")
+        print(f"   Published: {paper.published}")

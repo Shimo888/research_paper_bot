@@ -35,27 +35,19 @@ pip install -r requirements.txt
 
 ```bash
 # 仮想環境をアクティベート
-source venv/bin/activate
+source venv/bin/activate  # macOS/Linux
+# venv\Scripts\activate   # Windows
 
 # すべてのテストを実行
 python -m pytest tests/ -v
 
-# 特定のテストファイルを実行
-python -m pytest tests/test_arxiv_collector.py -v
+# 特定のユニットテストを実行
+python -m pytest tests/test_arxiv_collector.py -v      # arXiv collector
+python -m pytest tests/test_discord_notifier.py -v     # Discord notifier
 
-# カバレッジ付きでテスト実行
-python -m pytest tests/ --cov=src --cov-report=html
-```
-
-### 4. Discord通知のテスト
-
-```bash
-# ユニットテスト（Webhook不要）
-python -m pytest tests/test_discord_notifier.py -v
-
-# 手動テスト（実際のWebhookに送信）
-# 事前に .env ファイルに DISCORD_WEBHOOK_URL を設定すること
-python tests/manual_test_discord_notifier.py
+# 手動テストを実行（実際のAPIに送信）
+python tests/manual_test_arxiv_collector.py            # arXiv collector
+python tests/manual_test_discord_notifier.py           # Discord notifier（要 .env 設定）
 ```
 
 ## ディレクトリ構成
