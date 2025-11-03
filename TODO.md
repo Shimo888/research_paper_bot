@@ -24,10 +24,10 @@
   - [ ] エラーハンドリング・リトライ機能
 
 ## Phase 4: Discord通知機能
-- [ ] Discord notifier実装（discord_notifier.py）
-  - [ ] Webhook連携
-  - [ ] 埋め込み形式のメッセージ作成
-  - [ ] エラーハンドリング
+- [x] Discord notifier実装（discord_notifier.py）
+  - [x] Webhook連携
+  - [x] 埋め込み形式のメッセージ作成
+  - [x] エラーハンドリング
 
 ## Phase 5: メイン処理とオーケストレーション
 - [ ] main.py実装
@@ -61,7 +61,8 @@
 
 ## 進捗メモ
 - 作成日: 2025-11-01
-- 最終更新: 2025-11-01 08:53
+- 最終更新: 2025-11-03 16:04
 - Phase 1完了: プロジェクト基盤構築完了（ディレクトリ構造、設定ファイル、依存関係管理）
 - Phase 2部分完了: arXiv collector実装完了（APIとの連携、検索、データパース、エラーハンドリング）
+- Phase 4完了: Discord notifier実装完了（シンプルなメッセージ送信機能、埋め込み形式、接続テスト）
 - Phase 7部分完了: arXiv collectorのユニットテスト・手動テスト作成、README更新
