@@ -4,13 +4,18 @@
 
 ## 概要
 
-arXivやGoogle Scholar等から最新の技術論文を自動収集し、OpenAI GPT APIを使用して要約を生成し、Discord Webhookを通じて定期的に通知するシステム。GitHub Actionsによる自動実行により、日々の論文チェックを効率化する。
+arXivやGoogle Scholar等から最新の技術論文を自動収集し、OpenRouter APIを使用して要約を生成し、Discord Webhookを通じて定期的に通知するシステム。GitHub Actionsによる自動実行により、日々の論文チェックを効率化する。
 
 ## 技術スタック
 
 - 言語: Python 3.11+
+<<<<<<< Updated upstream
 - 論文収集: arXiv API, Semantic Scholar API(未実装)
 - AI要約: OpenAI GPT-4 API
+=======
+- 論文収集: arXiv API, Semantic Scholar API
+- AI要約: OpenRouter API (複数のLLMプロバイダーに対応)
+>>>>>>> Stashed changes
 - 通知: Discord Webhook
 - 定期実行: Github Actions
 - 依存管理: pip (requirements.txt)

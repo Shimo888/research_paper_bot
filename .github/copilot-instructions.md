@@ -5,14 +5,14 @@
 
 ## プロジェクトの目的
 - arXiv、Google Scholar等から最新の技術論文を自動収集
-- OpenAI GPT APIを使用して論文を要約
+- OpenRouter APIを使用して論文を要約（複数のLLMプロバイダーに対応）
 - Discord Webhookを通じて定期的に要約を通知
 - GitHub Actionsで定期実行（例：毎日朝9時）
 
 ## 技術スタック
 - **言語**: Python 3.11+
 - **論文収集**: arXiv API, Semantic Scholar API
-- **AI要約**: OpenAI GPT-4 API
+- **AI要約**: OpenRouter API (複数のLLMプロバイダーに対応)
 - **通知**: Discord Webhook
 - **スケジューリング**: GitHub Actions (cron)
 - **依存管理**: pip (requirements.txt)
@@ -34,7 +34,7 @@ research_paper_bot/
 │   │   └── scholar_collector.py     # Google Scholar収集
 │   ├── summarizers/
 │   │   ├── __init__.py
-│   │   └── openai_summarizer.py     # GPT-4による要約
+│   │   └── openrouter_summarizer.py # OpenRouterによる要約
 │   ├── notifiers/
 │   │   ├── __init__.py
 │   │   └── discord_notifier.py      # Discord通知
@@ -52,7 +52,8 @@ research_paper_bot/
 
 ## 環境変数
 ```env
-OPENAI_API_KEY=your_openai_api_key
+OPENROUTER_API_KEY=your_openrouter_api_key
+OPENROUTER_MODEL=anthropic/claude-3.5-sonnet  # 使用するモデル（例: google/gemini-pro, openai/gpt-4など）
 DISCORD_WEBHOOK_URL=your_discord_webhook_url
 ARXIV_SEARCH_QUERY=cat:cs.AI OR cat:cs.LG
 MAX_PAPERS_PER_DAY=5

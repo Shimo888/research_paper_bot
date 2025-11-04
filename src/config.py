@@ -10,8 +10,9 @@ load_dotenv()
 class Config:
     """アプリケーション設定クラス"""
     
-    # OpenAI API設定
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    # OpenRouter API設定
+    OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
+    OPENROUTER_MODEL: str = os.getenv("OPENROUTER_MODEL", "anthropic/claude-3.5-sonnet")
     
     # Discord Webhook設定
     DISCORD_WEBHOOK_URL: str = os.getenv("DISCORD_WEBHOOK_URL", "")
@@ -26,8 +27,8 @@ class Config:
     @classmethod
     def validate(cls) -> bool:
         """必須設定の検証"""
-        if not cls.OPENAI_API_KEY:
-            raise ValueError("OPENAI_API_KEY is required")
+        if not cls.OPENROUTER_API_KEY:
+            raise ValueError("OPENROUTER_API_KEY is required")
         if not cls.DISCORD_WEBHOOK_URL:
             raise ValueError("DISCORD_WEBHOOK_URL is required")
         return True
