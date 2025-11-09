@@ -59,6 +59,24 @@ python -m pytest tests/test_openrouter_summarizer.py -v # OpenRouter summarizer
 python tests/manual_test_arxiv_collector.py            # arXiv collector
 python tests/manual_test_discord_notifier.py           # Discord notifier（要 .env 設定）
 python tests/manual_test_summarizer.py                 # OpenRouter summarizer（要 .env 設定）
+
+# 統合テスト（論文収集→要約→Discord通知）
+python tests/test_integration.py
+# コマンド実行後メニューから選択して
+# 1. 環境変数チェック
+# 2. 統合テスト（Dry-run：Discord通知なし）
+# 3. 統合テスト（実通知：実際にDiscordに送信）
+# 0. 終了
+```
+
+### 5. メイン処理の実行
+
+```bash
+# 通知モード(実際にDiscordに通知)
+python -m src.main
+
+# Dry-runモード(Discord通知なし)
+python -m src.main --dry-run
 ```
 
 ## ディレクトリ構成

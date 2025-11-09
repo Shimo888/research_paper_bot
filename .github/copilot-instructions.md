@@ -31,7 +31,7 @@ research_paper_bot/
 │   ├── collectors/
 │   │   ├── __init__.py
 │   │   ├── arxiv_collector.py       # arXiv論文収集
-│   │   └── scholar_collector.py     # Google Scholar収集
+│   │   └── scholar_collector.py     # Google Scholar収集(未実装)
 │   ├── summarizers/
 │   │   ├── __init__.py
 │   │   └── openrouter_summarizer.py # OpenRouterによる要約
@@ -51,6 +51,7 @@ research_paper_bot/
 ```
 
 ## 環境変数
+.env.exampleに必要な環境変数のサンプルを記載する
 ```env
 OPENROUTER_API_KEY=your_openrouter_api_key
 OPENROUTER_MODEL=anthropic/claude-3.5-sonnet  # 使用するモデル（例: google/gemini-pro, openai/gpt-4など）
