@@ -17,7 +17,15 @@ arXivやGoogle Scholar等から最新の技術論文を自動収集し、OpenRou
 
 ## ローカル環境でのセットアップ
 
-### 1. 仮想環境の作成
+### 1. 環境変数の設定
+
+`.env.example`を参考に`.env`ファイルを作成し、必要なAPIキーとWebhook URLを設定してください。
+
+```bash
+cp .env.example .env
+```
+
+### 2. 仮想環境の作成
 
 ```bash
 python3 -m venv venv
@@ -25,14 +33,14 @@ source venv/bin/activate  # macOS/Linux
 # venv\Scripts\activate   # Windows
 ```
 
-### 2. 依存パッケージのインストール
+### 3. 依存パッケージのインストール
 
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. テストの実行
+### 4. テストの実行
 
 ```bash
 # 仮想環境をアクティベート
