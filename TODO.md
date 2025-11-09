@@ -49,17 +49,19 @@
   - [ ] 重複チェック機能
 
 ## Phase 6: GitHub Actions設定
-- [ ] daily_paper_summary.ymlの作成
-  - [ ] cronスケジュール設定
-  - [ ] Python環境のセットアップ
-  - [ ] Secrets設定の確認
+- [x] daily_paper_summary.ymlの作成
+  - [x] cronスケジュール設定
+  - [x] Python環境のセットアップ
+  - [x] Secrets設定の確認
 
 ## Phase 7: テストとドキュメント
 - [x] ユニットテストの作成（arXiv collector）
+- [x] ユニットテストの作成（Discord notifier）
 - [x] ユニットテストの作成（OpenRouter summarizer）
+- [x] 統合テストの作成（test_integration.py）
 - [x] 手動テストスクリプトの作成（arXiv collector、summarizer）
 - [x] README.mdの更新（テスト実行手順追加）
-- [ ] 統合テストの実行
+- [x] 統合テストの実行
 - [ ] 使用方法のドキュメント整備
 
 ## Phase 8: 最終調整とデプロイ
@@ -72,7 +74,7 @@
 
 ## 進捗メモ
 - 作成日: 2025-11-01
-- 最終更新: 2025-11-09 13:35
+- 最終更新: 2025-11-09 14:36
 - Phase 1完了: プロジェクト基盤構築完了（ディレクトリ構造、設定ファイル、依存関係管理）
 - Phase 2部分完了: arXiv collector実装完了（APIとの連携、検索、データパース、エラーハンドリング）
 - Phase 3完了: OpenRouter summarizer実装完了（API連携、プロンプト設計、リトライ機能、PaperResultモデル拡張）
@@ -81,4 +83,7 @@
   - 論文収集→要約→Discord通知の統合フロー実装完了
   - Dry-runモードでの統合テスト成功
   - 重複排除機能は未実装
-- Phase 7部分完了: arXiv collector・OpenRouter summarizerのユニットテスト・手動テスト作成、README更新
+- Phase 6完了: GitHub Actions設定完了（daily_paper_summary.yml作成、cron設定、Secrets設定）
+- Phase 7部分完了: テスト実装完了（全34テスト実装・成功）
+  - arXiv collector、Discord notifier、OpenRouter summarizerのユニットテスト
+  - 統合テスト（dry-run、real notification）
