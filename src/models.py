@@ -17,6 +17,7 @@ class PaperResult:
     published: str
     source: str
     categories: Optional[str] = None
+    summary: Optional[str] = None
     
     def to_dict(self) -> dict:
         """辞書形式に変換"""
@@ -28,5 +29,6 @@ class PaperResult:
             "url": self.url,
             "published": self.published,
             "source": self.source,
-            "categories": self.categories
+            "categories": self.categories,
+            "summary": self.summary
         }

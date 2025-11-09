@@ -17,11 +17,12 @@
   - [ ] 論文データの取得・パース
 
 ## Phase 3: AI要約機能
-- [ ] OpenAI summarizer実装（openai_summarizer.py）
-  - [ ] OpenAI API連携
-  - [ ] プロンプト設計
-  - [ ] 日本語要約生成
-  - [ ] エラーハンドリング・リトライ機能
+- [x] OpenRouter summarizer実装（openrouter_summarizer.py）
+  - [x] OpenRouter API連携
+  - [x] プロンプト設計
+  - [x] 日本語要約生成
+  - [x] エラーハンドリング・リトライ機能
+  - [x] PaperResultモデルにsummaryフィールド追加
 
 ## Phase 4: Discord通知機能
 - [x] Discord notifier実装（discord_notifier.py）
@@ -46,7 +47,8 @@
 
 ## Phase 7: テストとドキュメント
 - [x] ユニットテストの作成（arXiv collector）
-- [x] 手動テストスクリプトの作成
+- [x] ユニットテストの作成（OpenRouter summarizer）
+- [x] 手動テストスクリプトの作成（arXiv collector、summarizer）
 - [x] README.mdの更新（テスト実行手順追加）
 - [ ] 統合テストの実行
 - [ ] 使用方法のドキュメント整備
@@ -61,8 +63,9 @@
 
 ## 進捗メモ
 - 作成日: 2025-11-01
-- 最終更新: 2025-11-03 16:04
+- 最終更新: 2025-11-04 10:33
 - Phase 1完了: プロジェクト基盤構築完了（ディレクトリ構造、設定ファイル、依存関係管理）
 - Phase 2部分完了: arXiv collector実装完了（APIとの連携、検索、データパース、エラーハンドリング）
+- Phase 3完了: OpenRouter summarizer実装完了（API連携、プロンプト設計、リトライ機能、PaperResultモデル拡張）
 - Phase 4完了: Discord notifier実装完了（シンプルなメッセージ送信機能、埋め込み形式、接続テスト）
-- Phase 7部分完了: arXiv collectorのユニットテスト・手動テスト作成、README更新
+- Phase 7部分完了: arXiv collector・OpenRouter summarizerのユニットテスト・手動テスト作成、README更新

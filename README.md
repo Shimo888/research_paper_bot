@@ -45,10 +45,12 @@ python -m pytest tests/ -v
 # 特定のユニットテストを実行
 python -m pytest tests/test_arxiv_collector.py -v      # arXiv collector
 python -m pytest tests/test_discord_notifier.py -v     # Discord notifier
+python -m pytest tests/test_openrouter_summarizer.py -v # OpenRouter summarizer
 
 # 手動テストを実行（実際のAPIに送信）
 python tests/manual_test_arxiv_collector.py            # arXiv collector
 python tests/manual_test_discord_notifier.py           # Discord notifier（要 .env 設定）
+python tests/manual_test_summarizer.py                 # OpenRouter summarizer（要 .env 設定）
 ```
 
 ## ディレクトリ構成
